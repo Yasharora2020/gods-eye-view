@@ -4,7 +4,7 @@
 # upstream tag must never collide with a homelab build. homelab-k8s pins an
 # exact tag in kustomization.yaml, never :latest.
 #
-#   tag homelab-1 on this fork  ->  ghcr.io/<owner>/gods-eye-view:homelab-1
+#   tag homelab-2 on this fork  ->  ghcr.io/yasharora2020/gods-eye-view:homelab-2
 name: build-image
 
 on:
@@ -37,6 +37,7 @@ jobs:
           # The K3s nodes are VMs on Proxmox — amd64 only.
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/gods-eye-view:${{ github.ref_name }}
+          # Hard-coded lowercase: GHCR rejects the owner's capitals.
+          tags: ghcr.io/yasharora2020/gods-eye-view:${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
