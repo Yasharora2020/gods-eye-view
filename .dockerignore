@@ -1,0 +1,21 @@
+# 97 MB of history and 67 MB of README GIFs — neither is read at runtime.
+# (docs/ is touched only by src/firstRunExperience.test.mjs, never by the app.)
+.git
+.github
+docs
+
+# Rebuilt inside the image by `npm ci`.
+node_modules
+dist
+
+# Local dev and QA droppings.
+.env
+*.log
+screenshots/
+qa-shots/
+output/
+.gev-logs/
+.gev-cache/
+.gstack/
+3d-models/
+.DS_Store
